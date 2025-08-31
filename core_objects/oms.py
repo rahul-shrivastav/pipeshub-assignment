@@ -33,7 +33,7 @@ class OrderManagement:
 
     def onData(self, request: OrderRequest, req_type: RequestType):
         if not self._is_session_open():
-            logging.info(f"Rejecting order {request.m_orderId}, outside session")
+            logging.info(f"Rejecting order {request.m_orderId}, outside session period")
             return
 
         if req_type == RequestType.New:
